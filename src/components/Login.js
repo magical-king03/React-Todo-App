@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import login from "../assests/img/login_page.png"
 
 function Login() {
     let name = useRef();
@@ -54,40 +55,25 @@ function Login() {
     return (
         <div>
             <div>
-                <h1 className="text-4xl p-2 font-bold text-black text-center m-7">Login Now</h1>
-                <div className="m-auto border border-black rounded-xl m-3 md:w-[350px] w-[340px]">
-                    <div className="m-5">
-                        <p className="text-xl font-bold">Name</p>
-                        <input
-                            type="email"
-                            placeholder="Enter the name"
-                            className="border-1 border-black p-[10px] mt-5 border mb-5 rounded-lg w-[300px]"
-                            ref={name}
-                        />
+                <h1 className="mt-[20px] md:mt-[50px] text-xl md:text-2xl p-2 text-black lg:ml-[250px] md:ml-[75px] ml-[40px]">LOGIN NOW</h1>
+                <div className="grid grid-cols-2">
+                    <div>
+                        <input type="name" placeholder="Name" ref={name} className="lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px] text-white md:w-[400px] w-[300px] bg-black px-6 py-4 rounded-full" />
+
+                        <input type="password" placeholder="Password" ref={password} className="lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px] text-white md:w-[400px] w-[300px] bg-black px-6 py-4 rounded-full" />
+                        <br />
+                        <div className="flex items-end gap-5 w-screen">
+                            <button className="bg-white text-black border-1 border-black border px-7 py-3 rounded-full cursor-pointer lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px]" onClick={loginHandler}>
+                                Login
+                            </button>
+                            <Link to="/register" className="underline text-[#0000ff] text-lg">Don't have an account</Link>
+                        </div>
+                        <p className={check ? 'lg:mt-[25px] md:mt-0 mt-[25px] lg:ml-[270px] md:ml-[75px] ml-[40px] text-xl transform animate-pulse transition-all text-[#8b4513] font-bold' : 'hidden'}>Fill all the fields</p>
+                        <p className={userCheck ? 'lg:mt-[25px] md:mt-0 mt-[25px] lg:ml-[270px] md:ml-[75px] ml-[40px] text-xl transform animate-pulse transition-all text-[#8b4513] font-bold' : 'hidden'}>User not found</p>
                     </div>
-                    <div className="m-5">
-                        <p className="text-xl font-bold">Password</p>
-                        <input
-                            type="password"
-                            placeholder="Enter the password"
-                            className="border-1 border-black p-[10px] mt-5 border rounded-lg w-[300px]"
-                            ref={password}
-                        />
+                    <div className="hidden md:block">
+                        <img src={login} className="md:w-[300px] md:ml-[50px] md:h-[225px] lg:w-[500px] lg:h-[400px]" alt="Login img" />
                     </div>
-                    <div className="flex items-center justify-center">
-                        <button className="bg-black text-white px-5 py-3 rounded-lg cursor-pointer m-5" onClick={loginHandler}>
-                            Login
-                        </button>
-                        <Link to="/register" className="m-5 underline text-[#0000ff]">
-                            Don't have an account
-                        </Link>
-                    </div>
-                    <p className={check ? "ml-5 mb-5 text-xl transform animate-pulse transition-all text-[#ff0000] font-bold" : "hidden"}>
-                        Fill all the fields
-                    </p>
-                    <p className={userCheck ? "ml-5 mb-5 text-xl transform animate-pulse transition-all font-bold" : "hidden"}>
-                        No user found
-                    </p>
                 </div>
             </div>
         </div>

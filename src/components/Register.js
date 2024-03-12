@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import register from "../assests/img/register.png"
 let tempUsers = {}
 function Register() {
     let user_name = useRef();
@@ -40,7 +41,7 @@ function Register() {
     }
     return (
         <div>
-            <div>
+            {/* <div>
                 <h1 className="text-4xl p-2 font-bold text-black text-center m-7">Register Now for free</h1>
                 <div className=' m-auto border border-black rounded-xl m-3 md:w-[375px] w-[340px]'>
                     <div className="m-5">
@@ -60,6 +61,28 @@ function Register() {
                         
                     </div>
                     <p className={check ? 'ml-5 mb-5 text-xl transform animate-pulse transition-all text-[#ff0000] font-bold' : 'hidden'}>Fill all the fields</p>
+                </div>
+            </div> */}
+            <div>
+                <h1 className="mt-[20px] lg::mt-[50px] text-xl md:text-2xl p-2 text-black lg:ml-[250px] md:ml-[75px] ml-[40px]">REGISTER NOW FOR FREE</h1>
+                <div className="grid grid-cols-2">
+                    <div>
+                        <input type="name" placeholder="Name" ref={user_name} className="lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px] text-white lg:w-[400px] w-[300px] bg-black px-6 py-2 lg:py-3 rounded-full" />
+
+                        <input type="name" placeholder="Email" ref={email} className="lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px] text-white lg:w-[400px] w-[300px] bg-black px-6 py-2 lg:py-3 rounded-full" />
+
+                        <input type="password" placeholder="Password" ref={password} className="lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px] text-white lg:w-[400px] w-[300px] bg-black px-6 py-2 lg:py-3 rounded-full" />
+                        <br />
+                        <div className="flex items-end gap-5 w-screen">
+                            <button className="bg-white text-black border-1 border-black border px-7 py-3 rounded-full cursor-pointer lg:ml-[270px] mt-[15px] md:ml-[75px] ml-[40px]" onClick={registerHandler}>
+                                REGISTER
+                            </button>
+                        </div>
+                        <p className={check ? 'lg:mt-[25px] md:mt-0 mt-[25px] lg:ml-[270px] md:ml-[75px] ml-[40px] text-xl transform animate-pulse transition-all text-[#8b4513] font-bold' : 'hidden'}>Fill all the fields</p>
+                    </div>
+                    <div className="hidden md:block">
+                        <img src={register} className="w-[300px] h-[250px] lg:w-[500px] lg:h-[400px]" alt="Register img" />
+                    </div>
                 </div>
             </div>
         </div>

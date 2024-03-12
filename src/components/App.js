@@ -1,24 +1,50 @@
 import React from 'react';
 import AddTodo from "./AddTodo";
+import Home from "./Home"
 import Nav from "./Nav";
 import Login from "./Login";
 import Register from "./Register";
+import bgmobile from "../assests/img/bg-mobile.png"
+import background from "../assests/img/bg.png"; // Corrected typo in assets folder name
 import { Routes, Route } from 'react-router-dom';
+import ShowTodo from './ShowTodo';
 
 function App() {
-
   return (
-    <div>
-      <div>
-        <Nav />
-      </div>
-      <Routes>
-        <Route path="/" element={<AddTodo />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+    <div className='bg-[#ffe7d2] w-screen h-screen'>
+      <div style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain', // Center the background image
+        minHeight: '100vh', // Ensure the container takes up at least the height of the viewport
+      }} className='h-screen hidden md:block lg:bg-center md:bg-top w-screen h-screen'>
 
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add" element={<AddTodo />} />
+          <Route path="/view" element={<ShowTodo />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+      <div style={{
+        backgroundImage: `url(${bgmobile})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        minHeight: '100vh', // Ensure the container takes up at least the height of the viewport
+      }} className='h-screen block md:hidden bg-fixed'>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />          
+          <Route path="/add" element={<AddTodo />} />
+          <Route path="/view" element={<ShowTodo />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
     </div>
+
   );
 }
 

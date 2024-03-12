@@ -93,3 +93,24 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+
+
+/* Custom CSS */
+.custom-checkbox {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 40px;
+  height: 40px;
+  /* color: #0000ff; */
+  border: 2px solid #8b4513; /* Brown border color */
+  border-radius: 50%; /* Make it round */
+  outline: none;
+  cursor: not-allowed; /* Disable cursor */
+}
+
+.custom-checkbox:checked {
+  background-color: #8b4513; /* Brown background color when checked */
+}

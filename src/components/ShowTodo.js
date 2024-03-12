@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../assests/App.css';
+import '../assests/css/App.css';
 function ShowTodo(props) {
     let [Todos, setTodos] = useState([])
     let name1 = localStorage.getItem('name')
@@ -54,7 +54,7 @@ function ShowTodo(props) {
                         <div className='flex items-start gap-3'>
                             {
                                 todo.completed ?
-                                    <input type='checkbox' style={{ transform: 'scale(1.5)', color: 'blue', margin: '12px' }} className='p-3' disabled />
+                                    <input type='checkbox' style={{ transform: 'scale(1.5)', color: 'blue', margin: '12px' }} className='p-3' disabled checked />
                                     :
                                     <input type='checkbox' onClick={() => checkHandler(todo.id)} style={{ transform: 'scale(1.5)', margin: '14px' }} className='p-3' />
 
