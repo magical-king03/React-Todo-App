@@ -52,9 +52,6 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-end mr-[25px]">
-                    <img src={home_img} className="mt-[40px] w-[200px] h-[200px]" alt="Home img" />
-                </div>
             </div>
         </div>
     )

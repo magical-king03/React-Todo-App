@@ -11,7 +11,7 @@ function Nav() {
     return (
         <div>
             <div className='h-full flex w-full'>
-                <div className="flex items-center justify-between w-full lg:mt-[150px] lg:ml-[250px] lg:mr-[250px] md:mt-[100px] md:mr-[75px] md:ml-[75px] mt-[90px] ml-[40px] mr-[40px]">
+                <div className="flex items-center justify-between w-full lg:mt-[150px] lg:ml-[250px] lg:mr-[250px] md:mt-[100px] md:mr-[75px] md:ml-[75px] mt-[170px] ml-[50px] mr-[50px]">
                     <div className="flex items-center">
                         <img src={logo} className="md:h-10 md:w-10 h-5 w-5" alt="Logo" />
                         <Link to="/"><p className="font-bold md:text-4xl text-xl">uty Dash</p></Link>

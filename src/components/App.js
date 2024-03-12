@@ -4,7 +4,7 @@ import Home from "./Home"
 import Nav from "./Nav";
 import Login from "./Login";
 import Register from "./Register";
-import bgmobile from "../assests/img/bg-mobile.png"
+import bgmobile from "../assests/img/bg-mob.png"
 import background from "../assests/img/bg.png"; // Corrected typo in assets folder name
 import { Routes, Route } from 'react-router-dom';
 import ShowTodo from './ShowTodo';
@@ -32,8 +32,8 @@ function App() {
         backgroundImage: `url(${bgmobile})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        minHeight: '100vh', // Ensure the container takes up at least the height of the viewport
-      }} className='h-screen block md:hidden bg-fixed'>
+        minHeight: '100px',
+      }} className='h-screen w-full block md:hidden bg-center'>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />          
